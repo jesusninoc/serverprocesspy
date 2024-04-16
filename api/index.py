@@ -9,7 +9,7 @@ async def procesos():
     lista_procesos = []
     for proceso in psutil.process_iter():
         try:
-            info = proceso.as_dict(attrs=['pid', 'name', 'username'])
+            info = proceso.as_dict(attrs=['pid', 'name'])
             lista_procesos.append(info)
         except psutil.NoSuchProcess:
             pass
