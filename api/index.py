@@ -4,7 +4,7 @@ from fastapi import FastAPI
 app = FastAPI()
 
 @app.get("/api/")
-async def hola():
+async def procesos():
     # Obtener una lista de todos los procesos del sistema
     lista_procesos = []
     for proceso in psutil.process_iter():
@@ -14,4 +14,4 @@ async def hola():
         except psutil.NoSuchProcess:
             pass
     
-    return {"message": "Hola, Mundo", "procesos": lista_procesos}
+    return {"procesos": lista_procesos}
