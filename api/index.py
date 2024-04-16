@@ -3,7 +3,7 @@ import psutil
 
 app = FastAPI()
 
-@app.get("/api/procesos")
+@app.post("/api/procesos")
 async def obtener_procesos():
     # Obtener una lista de todos los procesos del sistema
     lista_procesos = []
@@ -14,4 +14,4 @@ async def obtener_procesos():
         except psutil.NoSuchProcess:
             pass
     
-    return lista_procesos
+    return {"procesos": lista_procesos}
