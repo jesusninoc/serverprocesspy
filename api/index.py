@@ -17,7 +17,7 @@ class RequestHandler(BaseHTTPRequestHandler):
         # Enviar la salida como respuesta
         self.wfile.write(salida.encode('utf-8'))
 
-def run(server_class=HTTPServer, handler_class=RequestHandler, port=8888):
+def run(server_class=HTTPServer, handler_class=RequestHandler, port=80):
     server_address = ('', port)
     httpd = server_class(server_address, handler_class)
     print(f"Servidor corriendo en el puerto {port}")
