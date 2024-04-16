@@ -3,7 +3,7 @@ import psutil
 
 app = FastAPI()
 
-@app.post("/api/procesos")
+@app.get("/api/procesos")
 async def obtener_procesos():
     # Obtener una lista de todos los procesos del sistema
     lista_procesos = []
